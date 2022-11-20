@@ -58,6 +58,7 @@
      tmux
      git
      gptfdisk
+     podman-compose
   ];
   environment.variables.EDITOR = "nvim";
 
