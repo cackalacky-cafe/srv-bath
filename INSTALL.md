@@ -4,6 +4,8 @@ Installing onto 500GB NVME - reserving 1TB NVME for data.
 
 ## Install from USB stick
 
+Make a UEFI bootable partition with 64GB of swap:
+
 ```shell
 export DISK=/dev/nvme1n1
 parted $DISK -- mklabel gpt
@@ -11,7 +13,11 @@ parted $DISK -- mkpart primary 512MB -64GB
 parted $DISK -- mkpart primary linux-swap -64GB 100%
 parted $DISK -- mkpart ESP fat32 1MB 512MB
 parted $DISK -- set 3 esp on
+```
 
+Make the filesystems. I'm using the default ot ext4 because my previous attempt at ZFS on root did not work.
+
+```
 mkfs.ext4 -L nixos ${DISK}p1
 mkswap -L swap ${DISK}p2
 mkfs.fat -F 32 -n boot ${DISK}p3
@@ -19,7 +25,11 @@ mount /dev/disk/by-label/nixos /mnt
 mkdir -p /mnt/boot
 mount /dev/disk/by-label/boot /mnt/boot
 swapon ${DISK}p2
+```
 
+Run the NixOS installer and reboot:
+
+```
 nixos-generate-config --root /mnt
 nixos-install
 reboot
@@ -33,19 +43,19 @@ nano /etc/nixos/configuration.nix
 
 uncomment:
 
-```
-services.openssh.enable = true;
+```nix
+# services.openssh.enable = true;
 ```
 
 add (ensure it has a trailing semicolon!)
 
-```
+```nix
 services.openssh.passwordAuthentication = true;
 ```
 
 apply changes:
 
-```
+```shell
 nixos-rebuild switch
 ```
 
@@ -54,7 +64,7 @@ nixos-rebuild switch
 ```shell
 sudo nix-channel --add https://nixos.org/channels/nixos-22.05 nixos
 sudo nixos-rebuild switch --upgrade
-'''
+```
 
 ## Create Mastodon Pool
 
