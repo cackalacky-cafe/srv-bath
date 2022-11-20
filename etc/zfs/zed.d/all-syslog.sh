@@ -1,0 +1,1 @@
+/etc/static/zfs/zed.d/all-syslog.sh

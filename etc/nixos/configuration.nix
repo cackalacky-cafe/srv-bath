@@ -8,6 +8,7 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      ./zfs.nix
     ];
 
   boot.loader.systemd-boot.enable = true;
@@ -46,6 +47,7 @@
 
   environment.systemPackages = with pkgs; [
      neovim
+     tmux
      git
   ];
   environment.variables.EDITOR = "nvim";
@@ -74,6 +76,5 @@
 
   system.copySystemConfiguration = true;
   system.stateVersion = "22.05"; # Did you read the comment?
-
 }
 

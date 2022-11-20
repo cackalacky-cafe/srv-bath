@@ -1,0 +1,1 @@
+/etc/static/zfs/zed.d/vdev_clear-led.sh

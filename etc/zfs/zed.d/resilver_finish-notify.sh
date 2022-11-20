@@ -1,0 +1,1 @@
+/etc/static/zfs/zed.d/resilver_finish-notify.sh
