@@ -88,5 +88,30 @@
   system.stateVersion = "22.05"; # Did you read the comment?
 
   boot.kernel.sysctl = {"vm.max_map_count" = 512000; };
+
+  fileSystems."/mastodon" = {
+    device = "mastodon";
+    fsType = "zfs";
+  };
+
+  fileSystems."/mastodon/es" = {
+    device = "mastodon/es";
+    fsType = "zfs";
+  };
+
+  fileSystems."/mastodon/redis" = {
+    device = "mastodon/redis";
+    fsType = "zfs";
+  };
+  
+  fileSystems."/mastodon/postgres" = {
+    device = "mastodon/postgres";
+    fsType = "zfs";
+  };
+  
+  fileSystems."/mastodon/public" = {
+    device = "mastodon/public";
+    fsType = "zfs";
+  };
 }
 
