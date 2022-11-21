@@ -38,6 +38,29 @@
      isNormalUser = true;
   };
 
+  users.users.postgres = {
+     isSystemUser = true;
+     group = "postgres";
+  };
+  users.groups.postgres = {};
+
+  users.users.redis = {
+     isSystemUser = true;
+     group = "redis";
+  };
+  users.groups.redis = {};
+
+  users.users.elasticsearch = {
+     isNormalUser = true;
+     group = "elasticsearch";
+  };
+  users.groups.elasticsearch = {};
+
+  users.users.mastodon = {
+     isSystemUser = true;
+  };
+  users.groups.mastodon = {};
+
   services.cron = {
     enable = true;
     systemCronJobs = [
