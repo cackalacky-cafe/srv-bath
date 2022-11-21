@@ -58,6 +58,7 @@
 
   users.users.mastodon = {
      isSystemUser = true;
+     group = "mastodon";
   };
   users.groups.mastodon = {};
 

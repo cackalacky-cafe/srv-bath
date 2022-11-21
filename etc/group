@@ -26,6 +26,10 @@ kvm:x:302:
 render:x:303:
 sgx:x:304:
 shadow:x:318:
+redis:x:991:
+postgres:x:992:
+mastodon:x:993:
+elasticsearch:x:994:
 podman:x:995:
 sshd:x:996:
 systemd-coredump:x:997:
