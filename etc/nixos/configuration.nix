@@ -76,6 +76,7 @@
   security.doas.extraRules = [{
 	groups = [ "wheel" ];
 	keepEnv = true;
+	persist = true;
   }];
 
   environment.systemPackages = with pkgs; [
@@ -95,7 +96,8 @@
       extraPackages = [ pkgs.zfs ];
     };
   };
-
+  # allow dnsname to work on all networks
+  # virtualisation.containers.containersConf.cniPlugins = [ pkgs.cni-plugins pkgs.dnsname-cni ];
 
   # Enable the OpenSSH daemon.
   services.openssh = {
@@ -113,7 +115,11 @@
   system.copySystemConfiguration = true;
   system.stateVersion = "22.05"; # Did you read the comment?
 
-  boot.kernel.sysctl = {"vm.max_map_count" = 512000; };
+  boot.kernel.sysctl = {
+    "vm.max_map_count" = 512000;
+    # Requested by Redis
+    "vm.overcommit_memory" = 1;
+  };
 
   fileSystems."/mastodon" = {
     device = "mastodon";
