@@ -81,6 +81,7 @@
 
   environment.systemPackages = with pkgs; [
      conmon
+     lsof
      neovim
      tmux
      git
