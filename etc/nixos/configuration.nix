@@ -41,6 +41,7 @@
   users.users.postgres = {
      isSystemUser = true;
      group = "postgres";
+     uid = 70;
   };
   users.groups.postgres = {};
 
