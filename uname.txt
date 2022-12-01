@@ -1,1 +1,1 @@
-Linux bath 5.15.79 #1-NixOS SMP Wed Nov 16 08:58:31 UTC 2022 x86_64 GNU/Linux
+Linux bath 5.15.80 #1-NixOS SMP Sat Nov 26 08:24:52 UTC 2022 x86_64 GNU/Linux

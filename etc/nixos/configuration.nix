@@ -15,6 +15,8 @@
   boot.loader.efi.canTouchEfiVariables = true;
   boot.supportedFilesystems = [ "zfs" ];
 
+  system.autoUpgrade.enable = true;
+
   networking.hostName = "bath";
   time.timeZone = "America/New_York";
 

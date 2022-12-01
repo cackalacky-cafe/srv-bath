@@ -26,6 +26,8 @@ kvm:x:302:
 render:x:303:
 sgx:x:304:
 shadow:x:318:
+systemd-oom:x:989:
+nscd:x:990:
 redis:x:991:
 postgres:x:992:
 mastodon:x:993:
@@ -33,7 +35,6 @@ elasticsearch:x:994:
 podman:x:995:
 sshd:x:996:
 systemd-coredump:x:997:
-polkituser:x:998:
 dhcpcd:x:999:
 nixbld:x:30000:nixbld1,nixbld10,nixbld11,nixbld12,nixbld13,nixbld14,nixbld15,nixbld16,nixbld17,nixbld18,nixbld19,nixbld2,nixbld20,nixbld21,nixbld22,nixbld23,nixbld24,nixbld25,nixbld26,nixbld27,nixbld28,nixbld29,nixbld3,nixbld30,nixbld31,nixbld32,nixbld4,nixbld5,nixbld6,nixbld7,nixbld8,nixbld9
 nogroup:x:65534:
