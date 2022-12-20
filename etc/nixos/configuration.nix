@@ -83,7 +83,7 @@
 
   environment.systemPackages = with pkgs; [
      conmon
-     lsof
+     postgresql
      neovim
      tmux
      git
